@@ -12,6 +12,6 @@ Usage: ./slt_to_dot -f inputfile [--fasta] [--debug]
              dollar symbols between all found sequences
     --debug: Label all nodes with the corresponding substrings
 
-Small example data file ESA.txt included in the project root.
-Run the example with ./slt_to_dot -f ESA.txt
+Small example data file example.txt included in the project root.
+Run the example after building with ./slt_to_dot -f example.txt
 
