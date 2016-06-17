@@ -15,3 +15,4 @@ Usage: ./slt_to_dot -f inputfile [--fasta] [--debug]
 Small example data file example.txt included in the project root.
 To run example (after building) run the command ./slt_to_dot -f example.txt
 
+Note: maximum input size: 2^31 characters.
