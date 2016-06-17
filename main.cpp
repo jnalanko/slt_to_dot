@@ -48,11 +48,26 @@ string parseConcatenate(std::istream &input, char separator){
     }
 }
 
+void print_instructions(){
+    cerr << "  Usage: ./slt_to_dot -f inputfile [--fasta] [--debug]" << endl;
+    cerr << "  Prints the suffix link tree of the text in the input file to stdout" << endl;
+    cerr << "  Options:" << endl;
+    cerr << "  --fasta: Interprets input file as a fasta-format file," << endl;
+    cerr << "           concatenating all sequences found in the file placing" << endl;
+    cerr << "           dollar symbols between all the found sequences" << endl;
+    cerr << "  --debug: Label all nodes with the corresponding substrings" << endl;
+    return;
+}
+
 
 int main(int argc, char** argv){
     bool debug_mode = false;
     bool fasta = false;
     string filename;
+    if(argc == 1){
+        print_instructions();
+        return 1;
+    }
     for(int i = 1; i < argc; i++){
         if(string(argv[i]) == "--debug") debug_mode = true;
         else if(string(argv[i]) == "--fasta") fasta = true;
