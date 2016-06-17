@@ -13,5 +13,5 @@ Usage: ./slt_to_dot -f inputfile [--fasta] [--debug]
     --debug: Label all nodes with the corresponding substrings
 
 Small example data file example.txt included in the project root.
-Run the example after building with ./slt_to_dot -f example.txt
+To run example (after building) run the command ./slt_to_dot -f example.txt
 
