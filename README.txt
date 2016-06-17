@@ -11,3 +11,7 @@ Usage: ./slt_to_dot -f inputfile [--fasta] [--debug]
              concatenating all sequences found in the file placing
              dollar symbols between all found sequences
     --debug: Label all nodes with the corresponding substrings
+
+Small example data file ESA.txt included in the project root.
+Run the example with ./slt_to_dot -f ESA.txt
+
