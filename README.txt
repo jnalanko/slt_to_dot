@@ -1,4 +1,4 @@
-Prints the suffix link tree of the input file into stdout.
+Prints the suffix link tree of the input file in dot format into stdout.
 
 Compile with make at the project root
 Note: Needs the cmake build tool installed to build the sdsl-lite library
