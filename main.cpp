@@ -52,9 +52,9 @@ void print_instructions(){
     cerr << "  Usage: ./slt_to_dot -f inputfile [--fasta] [--debug]" << endl;
     cerr << "  Prints the suffix link tree of the text in the input file to stdout" << endl;
     cerr << "  Options:" << endl;
-    cerr << "  --fasta: Interprets input file as a fasta-format file," << endl;
+    cerr << "  --fasta: Interprets the input file as a fasta-format file," << endl;
     cerr << "           concatenating all sequences found in the file placing" << endl;
-    cerr << "           dollar symbols between all the found sequences" << endl;
+    cerr << "           dollar symbols between all found sequences" << endl;
     cerr << "  --debug: Label all nodes with the corresponding substrings" << endl;
     return;
 }
@@ -80,7 +80,7 @@ int main(int argc, char** argv){
         }
         else{
             cout << "Error parsing command line parameters" << endl;
-            cout << i << " " << argv[i] << endl;
+            print_instructions();
             return 1;
         }
         
@@ -88,6 +88,7 @@ int main(int argc, char** argv){
     
     if(filename == ""){
         cerr << "Error: missing input file" << endl;
+        print_instructions();
         return 1;
     }
     
