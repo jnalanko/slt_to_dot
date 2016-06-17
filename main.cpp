@@ -106,6 +106,10 @@ int main(int argc, char** argv){
         s = raw;
     }
     
+    if(s.size() > 2147483647){ // 2147483647 = 2^31 - 1
+        cerr << "Error: maximum input size is 2147483647 (=2^31 - 1) characters" << endl;
+        return 1;
+    }
     BD_BWT_index<> index((uint8_t*)(s.c_str()));
     BD_BWT_index_iterator<sdsl::bit_vector> it(&index, debug_mode);
     cout << "digraph slt {\n";
