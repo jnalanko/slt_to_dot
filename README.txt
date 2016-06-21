@@ -10,8 +10,9 @@ Usage: ./slt_to_dot -f inputfile [--fasta] [--debug]
     --fasta: Interprets the input file as a fasta-format file
              concatenating all sequences found in the file placing
              dollar symbols between all found sequences. Does not
-             explore the subtrees of edges with dollars (the root
-             of the subtree is still printed).
+             explore the subtrees of edges with dollars, i.e. if the
+             edge from the parent of a node is labelled with a dollar,
+             do not explore the children of the node.
     --debug: Label all nodes with the corresponding substrings
 
 Small example data file example.txt included in the project root.
