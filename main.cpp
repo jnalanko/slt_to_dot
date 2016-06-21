@@ -112,6 +112,7 @@ int main(int argc, char** argv){
     }
     BD_BWT_index<> index((uint8_t*)(s.c_str()));
     BD_BWT_index_iterator<sdsl::bit_vector> it(&index, debug_mode);
+    if(fasta) it.stop_at_dollars = true;
     cout << "digraph slt {\n";
     while(it.next()){
         // Iterate through the tree. The iterator is printing

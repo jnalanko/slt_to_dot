@@ -27,6 +27,7 @@ public:
     
     const BD_BWT_index<t_bitvector>* index;
     bool debug_mode;
+    bool stop_at_dollars;
     int next_id;
     
     // Iteration state
@@ -37,7 +38,7 @@ public:
     // Reused space between iterations
     std::vector<int64_t> local_c_array;
     
-    BD_BWT_index_iterator(const BD_BWT_index<t_bitvector>* index, bool debug_mode = false) : index(index), debug_mode(debug_mode), next_id(1), local_c_array(256) {
+    BD_BWT_index_iterator(const BD_BWT_index<t_bitvector>* index, bool debug_mode = false) : index(index), debug_mode(debug_mode), stop_at_dollars(false), next_id(1), local_c_array(256) {
         Interval empty_string(0,index->size()-1);
         iteration_stack.push_back(Stack_frame(Interval_pair(empty_string,empty_string), 0, 0, 0));
         current = iteration_stack.back();
@@ -86,7 +87,8 @@ void BD_BWT_index_iterator<t_bitvector>::push_right_maximal_children(Stack_frame
             }
             else
                 std::cout << f.node_id << " -> " << child_id << " [label=\"" << c << "\"];\n";
-            iteration_stack.push_back(Stack_frame(child,f.depth+1,c,child_id));
+            if(!stop_at_dollars || c != '$')
+                iteration_stack.push_back(Stack_frame(child,f.depth+1,c,child_id));
         }
     }    
 }
